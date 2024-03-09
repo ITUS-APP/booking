@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file link  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="my-container">
+        <nav class="my-navbar">
+            <a class="my-navbar-brand" href="#">
+                <img src="image/icon-6.png" width="30" height="30" alt=""> LOGO
+            </a>
+            <div class="my-navbar-right">
+                <i class="fas fa-user"></i>
+                <p>ชื่อผู้ใช้</p>
+            </div>
+        </nav>
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h1 class="modal-title fs-5" id="exampleModalLabel"></h1> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h1 class="modal__title">Package</h1>
+                        <img id="link-img" class="img-list" src="image/package1.jpg" alt=""><br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-booking" class="modal__btn"><a><i class="far fa-calendar-plus"></i>จอง</a>
+                            &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-2" id="exampleModalLabel">ข้อมูลการจอง</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-----------ฟอร์มบันทึกข้อมูล แก้ไข------------------->
+                        <form id="myForm" onsubmit="submitData(this)">
+                            <h2 id="queuetext" style="text-align: center;" class="mb-2">รายการคิว</h2>
+                            <br>
+                            <section>
+                                <div class="row row-cols-5">
+                                    <div class="col">
+                                        <button id="btnQ1" type="button" class="circle-btn">1</button>
+                                    </div>
+                                    <div class="col">
+                                        <button id="btnQ2" type="button" class="circle-btn">2</button>
+                                    </div>
+                                    <div class="col">
+                                        <button id="btnQ3" type="button" class="circle-btn">3</button>
+                                    </div>
+                                    <div class="col">
+                                        <button id="btnQ4" type="button" class="circle-btn">4</button>
+                                    </div>
+                                    <div class="col">
+                                        <button id="btnQ5" type="button" class="circle-btn">5</button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <br>
+                            <div class="row">
+
+                                <!-- <i class="bank bank-scb s"></i> -->
+                                <input type="text" class="form-control" id="userlog_name" name="userlog_name" hidden>
+                                <input type="text" class="form-control" id="numid" name="numid" hidden>
+                                <input type="text" class="form-control" id="usermail" name="usermail" hidden>
+                                <div class="col-md-6 mb-2">
+                                    <label>ชื่อผู้จอง</label>
+                                    <input type="text" class="form-control" id="fname" name="fname" required>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label>วันที่ จองคิว</label>
+                                    <input type="date" class="form-control" id="datetime" name="datetime" onchange="checkQueue()" required>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label>จองคิว</label>
+                                    <select class="form-control" id="queue" name="queue" onchange="checkQueueSelection()" required>
+                <option selected disabled value="">เลือกคิว..</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label>เบอร์โทร</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" required>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label>ธนาคารที่ โอนเงิน <span class="badge text-bg-warning" onclick="details()">ดูเลขบัญชี</span></label>
+                                    <!-- Add your bank select options here -->
+                                    <select class="form-control" id="bank" name="bank" required>
+                                        <option selected disabled value="">เลือกธนาคาร</option>
+                                        <option selected disabled value="">เลือกธนาคาร</option>
+                                        <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
+                                        <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+                                        <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                                        <option value="ธนาคารทหารไทย">ธนาคารทหารไทย</option>
+                                        <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
+                                        <option value="ธนาคารกรุงศรีอยุธยา">ธนาคารกรุงศรีอยุธยา</option>
+                                        <option value="ธนาคารเกียรตินาคิน">ธนาคารเกียรตินาคิน</option>
+                                        <option value="ธนาคารซีไอเอ็มบีไทย">ธนาคารซีไอเอ็มบีไทย</option>
+                                        <option value="ธนาคารทิสโก้">ธนาคารทิสโก้</option>
+                                        <option value="ธนาคารธนชาต">ธนาคารธนชาต</option>
+                                        <option value="ธนาคารยูโอบี">ธนาคารยูโอบี</option>
+                                        <option value="ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)">ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
+                                        <option value="ธนาคารไทยเครดิตเพื่อรายย่อย">ธนาคารไทยเครดิตเพื่อรายย่อย</option>
+                                        <option value="ธนาคารแลนด์ แอนด์ เฮาส์">ธนาคารแลนด์ แอนด์ เฮาส์</option>
+                                        <option value="ธนาคารไอซีบีซี (ไทย)">ธนาคารไอซีบีซี (ไทย)</option>
+                                        <option value="ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย">
+                                            ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย</option>
+                                        <option value="ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร">ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</option>
+                                        <option value="ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย">ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย</option>
+                                        <option value="ธนาคารออมสิน">ธนาคารออมสิน</option>
+                                        <option value="ธนาคารอาคารสงเคราะห์">ธนาคารอาคารสงเคราะห์</option>
+                                        <option value="ธนาคารอิสลามแห่งประเทศไทย">ธนาคารอิสลามแห่งประเทศไทย</option>
+                                        <option value="ธนาคารแห่งประเทศจีน">ธนาคารแห่งประเทศจีน</option>
+                                        <option value="ธนาคารซูมิโตโม มิตซุย ทรัสต์ (ไทย)">ธนาคารซูมิโตโม มิตซุย ทรัสต์ (ไทย)</option>
+                                        <option value="ธนาคารฮ่องกงและเซี้ยงไฮ้แบงกิ้งคอร์ปอเรชั่น จำกัด">ธนาคารฮ่องกงและเซี้ยงไฮ้แบงกิ้งคอร์ปอเรชั่น จำกัด
+                                        </option>
+                                        <option value="PromptPay">PromptPay</option>
+                                        <option value="True Money Wallet">True Money Wallet</option>
+                                        <!-- Add bank options here -->
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-2" id="status_">
+                                    <label>สถานะ</label>
+                                    <select class="form-control" id="status" name="status">
+                <option selected disabled value="">เลือก...สถานะ</option>
+                <option value="รอตรวจสอบ">รอตรวจสอบ</option>
+                <option value="ตรวจสอบแล้ว">ตรวจสอบแล้ว</option>
+                <option value="ยกเลิก">ยกเลิก</option>
+            </select>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label>สลิปการโอนเงิน</label>
+                                    <input type="file" class="form-control" id="nfile" name="nfile" accept="image/*" onchange="previewImage(event)">
+                                </div>
+                                <div>
+                                    <a id="imageLink" href="#" onclick="openImageInNewTab()" target="_blank">
+                                        <img id="myPreview" width="150px" class="mx-auto">
+                                    </a>
+                                </div>
+                                <br><br>
+
+                                <!-- บัญชีธนาคาร -->
+                                <input type="text" id="myInput" class="copy_text" value="7013451068" readonly style="display:none">
+
+                            </div>
+
+                            <br> <br>
+                            <!-- <button id="btn1" type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> บันทึก</button> -->
+
+
+
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn1" class="c-button" type="submit">
+                                <span class="c-main">
+                                    <span class="c-ico"><span class="c-blur"></span> <span class="ico-text">+</span></span>
+                                    บันทึกจอง
+                                </span>
+                            </button>
+                        <button class="btn btn-primary" type="button" id="btn2" disabled style="display:none">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> กำลังบันทึก..
+                        </button>
+
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h1 class="my-heading">our services</h1>
+
+        <div class="box-container" id="box-container">
+
+
+
+        </div>
+
+    </div>
+
+
+    <!-- modal 1 -->
+    <div class="my-box-modal my-body-modal" id="modal-detail" style="display: none;">
+        <!-- <a href="#m1-o" class="link-1" id="m1-c">Modal 1</a> -->
+        <!-- <p class="box__info">Without Background</p> -->
+
+        <div class="my-modal-container" id="m1-o" style="--m-background: transparent;">
+            <div class="modal-mo">
+                <h1 class="modal__title">Package</h1>
+                <img id="imgLink" class="img-list" src="" alt=""><br>
+                <!-- <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta maiores libero minus obcaecati iste optio, eius labore repellendus.</p> -->
+                <button id="btn-booking" class="modal__btn"><a><i class="far fa-calendar-plus"></i>จอง</a>
+                    &rarr;</button>
+                <a id="close-modal" href="#m1-c" class="link-2"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- /modal 1 -->
+
+
+
+    <!-- form จอง -->
+
+
+
+    <!-- end form จอง -->
+
+    <!-- end form จอง -->
+
+
+    <!-- <div class="box-modal" style="display: none;">
+        <a class="button-modal" href="#popup1">Let me Pop up</a>
+    </div> -->
+
+    <div id="popup1" class="overlay">
+        <div class="popup-modal">
+            <h2>Here i am</h2>
+            <a class="close-popup" href="#">&times;</a>
+            <div class="content">
+                Thank to pop me out of that button, but now i'm done so you can close this window.
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="nav">
+        <a href="#" class="nav__link nav__link--active">
+            <i class="far fa-calendar-plus nav__icon"></i>
+            <span class="nav__text">จอง</span>
+        </a>
+
+        <a href="#" class="nav__link">
+            <i class="far fa-calendar-alt nav__icon"></i>
+            <span class="nav__text">รายการจอง</span>
+        </a>
+        <!-- Add more links here -->
+    </nav>
+
+    <script>
+        const circleBtns = document.querySelectorAll('.circle-btn');
+
+        // วนลูปผ่านทุกปุ่มและเพิ่มการฟังก์ชันการคลิก
+        circleBtns.forEach(button => {
+            button.addEventListener('click', function() {
+                // ลบคลาส active จากปุ่มทั้งหมดก่อน
+                circleBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                // เพิ่มคลาส active ให้กับปุ่มที่ถูกคลิก
+                this.classList.add('active');
+            });
+        });
+
+        function checkQueueSelection() {
+            var selectedValue = document.getElementById("queue").value;
+            var buttons = document.querySelectorAll(".circle-btn");
+
+            // ล้างคลาส "active" ที่มีอยู่ก่อนหน้า
+            buttons.forEach(button => {
+                button.classList.remove("active");
+                button.style.color = "white"; // เปลี่ยนสีของข้อความเป็นสีขาว
+                button.style.width = "50px"; // เปลี่ยนความกว้างของปุ่มกลับเป็น 50px
+                button.style.height = "50px"; // เปลี่ยนความสูงของปุ่มกลับเป็น 50px
+                button.style.animation = ""; // ล้าง animation ที่กำหนดไว้
+            });
+
+            // เพิ่มคลาส "active" และปรับสีข้อความเป็นสีแดง และขนาดของปุ่มเมื่อเลือก
+            var selectedButton = document.getElementById("btnQ" + selectedValue);
+            if (selectedButton && selectedValue !== "") { // เพิ่มเงื่อนไขตรวจสอบ selectedValue
+                selectedButton.classList.add("active");
+                selectedButton.style.color = "red"; // เปลี่ยนสีของข้อความเป็นสีแดง
+                selectedButton.style.width = "70px"; // เปลี่ยนความกว้างของปุ่มเป็น 70px
+                selectedButton.style.height = "70px"; // เปลี่ยนความสูงของปุ่มเป็น 70px
+                selectedButton.style.animation = "changeColor 1s infinite"; // เพิ่ม animation
+            } else {
+                // ถ้าไม่ได้เลือกให้เปลี่ยนสีข้อความในทุกปุ่มกลับเป็นสีขาวและกลับความกว้างและความสูงมาเป็นค่าเริ่มต้น
+                buttons.forEach(button => {
+                    button.style.color = "white";
+                    button.style.width = "50px";
+                    button.style.height = "50px";
+                });
+            }
+        }
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // ฟังก์ชันสำหรับสร้าง div.box
+            function createBox(packageData) {
+                const boxDiv = document.createElement('div');
+                boxDiv.classList.add('box');
+
+                const circleDiv = document.createElement('div');
+                circleDiv.classList.add('circle');
+                const span = document.createElement('span');
+                span.textContent = packageData.packageNumber;
+                circleDiv.appendChild(span);
+                boxDiv.appendChild(circleDiv);
+
+                const h3 = document.createElement('h3');
+                h3.textContent = packageData.package;
+                boxDiv.appendChild(h3);
+
+                const p = document.createElement('p');
+                p.textContent = packageData.description;
+                boxDiv.appendChild(p);
+
+                const btnDetail = document.createElement('a');
+                btnDetail.classList.add('btn');
+                btnDetail.textContent = 'รายละเอียด';
+                btnDetail.href = packageData.detailLink;
+                boxDiv.appendChild(btnDetail);
+
+                const br = document.createElement('br');
+                boxDiv.appendChild(br);
+
+                const bookingSpan = document.createElement('span2');
+                bookingSpan.dataset.bookingLink = packageData.bookingSpan; // กำหนดค่าให้กับ dataset
+                boxDiv.appendChild(bookingSpan);
+
+                const btnBooking = document.createElement('a');
+                btnBooking.classList.add('btn2');
+
+                const bookingIcon = document.createElement('i');
+                bookingIcon.classList.add('far', 'fa-calendar-plus');
+                btnBooking.appendChild(bookingIcon);
+
+                // เพิ่มช่องว่างหน้าข้อความ "จอง" เพื่อให้ไอคอนและข้อความมีระยะห่าง
+                const bookingText = document.createTextNode(' จอง');
+                btnBooking.appendChild(bookingText);
+
+                btnBooking.href = packageData.bookingLink;
+                boxDiv.appendChild(btnBooking);
+
+                boxContainer.appendChild(boxDiv);
+            }
+
+
+
+
+
+            // สร้าง div.box สำหรับแต่ละ package
+            const boxContainer = document.getElementById('box-container');
+            const packages = [{
+                package: "Package 6,999 ฿",
+                description: "Description for Package 6,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1mmjIRN1txNesZo5yNuw7e379IwbakCMT",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 13,999 ฿",
+                description: "Description for Package 13,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/12aJjRuqYQjJAhNR4y7DmMGNVx-NCj1db",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 17,999 ฿",
+                description: "Description for Package 17,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1o3klBvptgzxV1U3btrnbrJOFJWPKgwsv",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 19,999 ฿",
+                description: "Description for Package 19,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1rfXlMeAKRskraKJuRtRW5aC4jyMcTyD2",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 22,999 ฿",
+                description: "Description for Package 22,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1L2qO8w3eKabaMMlinB0R7jzkTIxvIKQ7",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 25,999 ฿",
+                description: "Description for Package 25,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/15swxewBRMYUC1lbVgk-ztYjKAvLTTY5L",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 27,999 ฿",
+                description: "Description for Package 27,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1i__7_yu8KtgHBtVLMArb6Y8Iq0pzxe61",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 29,999 ฿",
+                description: "Description for Package 29,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/12TBkIzs3Uz1anUXXVEPlVaU1qosoMVex",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 31,999 ฿",
+                description: "Description for Package 31,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/10IjvHN6oFhVX5II2ObWZq22aaUHDHK8F",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 33,999 ฿",
+                description: "Description for Package 33,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1tpBcneZaO5F3557-OddTYOF2s766IwjA",
+                detailLink: "#",
+                bookingLink: "#"
+            }, {
+                package: "Package 35,999 ฿",
+                description: "Description for Package 35,999",
+                bookingSpan: "https://lh3.googleusercontent.com/d/1_R4KjobDjj6ccU_RjZ7mswngCN0BF99W",
+                detailLink: "#",
+                bookingLink: "#"
+            }];
+
+            packages.forEach((packageData, index) => {
+                packageData.packageNumber = index + 1;
+                createBox(packageData);
+            });
+
+            // เพิ่มการเชื่อมต่อระหว่างปุ่ม "จอง" และฟังก์ชัน handleBookingClick
+            const btnBookingList = document.querySelectorAll('.btn2');
+            btnBookingList.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // หาชื่อแพ็คเกจจากข้อความใน div.box ของปุ่มที่ถูกคลิก
+                    const packageName = this.parentNode.querySelector('h3').textContent;
+                    handleBookingClick(packageName);
+                    // $('#popup1').show();
+
+                });
+            });
+
+            // ฟังก์ชันสำหรับจัดการเมื่อคลิกที่ปุ่ม "จอง"
+            function handleBookingClick(packageName) {
+
+                // alert('ราคาของ ' + packageName);
+                // $('#popup1').show();
+                // $('#staticBackdrop').modal('show');
+                $('#myForm')[0].reset();
+                checkQueueSelection();
+                $('#exampleModalToggle').modal('show');
+
+            }
+
+
+
+            const btndetail = document.querySelectorAll('.btn');
+            btndetail.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // หาชื่อแพ็คเกจจากข้อความใน div.box ของปุ่มที่ถูกคลิก
+                    const packageName = this.parentNode.querySelector('h3').textContent;
+                    const span = this.parentNode.querySelector('span2');
+                    const bookingLink = span.dataset.bookingLink;
+
+                    console.log('link', bookingLink)
+                    console.log('packageName', packageName)
+                    event.preventDefault()
+
+
+                    $('#staticBackdrop').modal('show');
+
+                    $('.modal__title').text('Package ' + packageName);
+                    $('#link-img').attr('src', bookingLink);
+
+
+                });
+            });
+
+            const btnOpen = document.querySelectorAll('.modal__btn');
+            btnOpen.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // หาชื่อแพ็คเกจจากข้อความใน div.box ของปุ่มที่ถูกคลิก
+
+                    event.preventDefault()
+                    $('#myForm')[0].reset();
+                    checkQueueSelection();
+                    // $('#close-modal').click();
+                    $('#exampleModalToggle').modal('show');
+                    // checkQueueSelection();
+                });
+            });
+
+
+            // const btnclose = document.querySelectorAll('.link-2');
+            // btnclose.forEach(btn => {
+            //     btn.addEventListener('click', function() {
+
+            //         $('#modal-detail').hide();
+            //     });
+            // });
+
+        });
+
+
+
+
+
+
+        // $('#btn-booking').on('click', function() {
+        //     // alert('คุณคลิกที่ปุ่ม "จอง"');
+        //     $('#popup1').show();
+        // });
+    </script>
+
+
+
+</body>
+
+</html>

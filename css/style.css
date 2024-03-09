@@ -1,0 +1,837 @@
+body {
+    /* filter: blur(5px); */
+    /* background-image: url("https://img5.pic.in.th/file/secure-sv1/229541.jpeg"); */
+    background: linear-gradient(45deg, rgb(6, 80, 64), rgb(38, 87, 161));
+    background-color: #cccccc;
+    /* ปรับความเบลอของพื้นหลัง */
+}
+
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.my-navbar {
+    position: fixed;
+    /* ทำให้แถบนำทางติดอยู่ด้านบน */
+    top: 0;
+    /* ตั้งค่าด้านบนเป็น 0 */
+    left: 0;
+    /* ตั้งค่าด้านซ้ายเป็น 0 */
+    width: 100%;
+    /* ทำให้แถบนำทางมีความกว้างเต็มหน้าจอ */
+    background-color: #ffffff;
+    background: linear-gradient(45deg, rgb(23, 141, 115), rgb(75, 139, 235));
+    /* สีพื้นหลังของแถบนำทาง */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาด้านล่างของแถบนำทาง */
+    z-index: 1000;
+    /* ตั้งค่าค่าที่สูงกว่าให้แถบนำทางอยู่ด้านหน้า */
+}
+
+.my-navbar-brand {
+    margin: 0 20px;
+    /* ทำให้มีช่องว่างระหว่างตราสัญลักษณ์และข้อความ */
+    padding: 10px 0;
+    /* กำหนดการเรียงข้อความในตำแหน่งที่กำหนด */
+    font-size: 20px;
+    /* กำหนดขนาดตัวอักษรของตราสัญลักษณ์ */
+    font-weight: bold;
+    /* กำหนดน้ำหนักตัวหนังสือของตราสัญลักษณ์ */
+    text-decoration: none;
+    /* กำหนดลักษณะของการเชื่อมโยงข้อความ */
+    color: #333333;
+    /* กำหนดสีของตราสัญลักษณ์ */
+}
+
+.my-container {
+    background-image: url("https://img2.pic.in.th/pic/BG076535ae9a31655b.jpeg");
+    background-size: cover;
+    /* ให้ภาพพื้นหลังขยายเต็มพื้นที่ของหน้าจอ */
+    background-position: center;
+    /* จัดวางภาพให้อยู่ตรงกลางของหน้าจอ */
+    background-attachment: fixed;
+    /* ทำให้พื้นหลังที่เลื่อนหน้าจอไม่เลื่อนไปด้วย */
+    /* background: linear-gradient(45deg, rgb(6, 80, 64), rgb(38, 87, 161)); */
+    padding: 15px 9%;
+    padding-bottom: 100px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    /* เพิ่ม margin-bottom เพื่อยก container ขึ้น */
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.my-container .my-heading {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    font-size: 50px;
+}
+
+.my-container .box-container {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 15px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    padding: 10px;
+    grid-gap: 40px;
+}
+
+.my-container .box-container .box {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background: linear-gradient(45deg, rgb(250, 241, 253), rgb(210, 252, 243));
+    /* background-image: url("https://img5.pic.in.th/file/secure-sv1/229541.jpeg"); */
+    background-size: cover;
+    text-align: center;
+    padding: 30px 20px;
+    /* ปรับความเบลอของภาพ */
+}
+
+.my-container .box-container .box img {
+    height: 80px;
+}
+
+.my-container .box-container .box h3 {
+    color: #444;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.my-container .box-container .box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.my-container .box-container .box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    /* background: #333; */
+    background: linear-gradient(45deg, rgb(19, 248, 199), rgb(30, 164, 241));
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+
+.my-container .box-container .box .btn:hover {
+    letter-spacing: 1px;
+}
+
+.my-container .box-container .box .btn2 {
+    margin-top: 10px;
+    display: inline-block;
+    /* background: #333; */
+    background: linear-gradient(45deg, rgb(131, 112, 240), rgb(6, 176, 255));
+    color: #fff;
+    font-size: 17px;
+    border-radius: 20px;
+    padding: 8px 25px;
+}
+
+.my-container .box-container .box .btn2:hover {
+    letter-spacing: 1px;
+}
+
+.my-container .box-container .box:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    transform: scale(1.03);
+}
+
+@media (max-width:768px) {
+    .my-container {
+        padding: 20px;
+    }
+}
+
+.circle {
+    background: linear-gradient(45deg, rgb(186, 240, 228), rgb(56, 158, 253));
+    background-image: url("https://img5.pic.in.th/file/secure-sv1/229541.jpeg");
+    background-size: cover;
+    /* กำหนดให้รูปภาพขยายเต็มพื้นที่ */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    /* ใช้ Flexbox เพื่อจัดเนื้อหาภายใน */
+    justify-content: center;
+    /* จัดเนื้อหาในแนวนอนตรงกลาง */
+    align-items: center;
+    /* จัดเนื้อหาในแนวตั้งตรงกลาง */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.circle span {
+    font-size: 5rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* เพิ่มเงาของข้อความ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+    /* เงาที่มีความเข้มจากสีดำ */
+    /* เพิ่มเงาของวงกลม */
+    /* เงาของวงกลม */
+    /* ปรับขนาดตามที่ต้องการ */
+    animation: bounce 1s infinite alternate;
+    /* ใช้ animation ชื่อ bounce */
+}
+
+.circle-btn {
+    background: linear-gradient(45deg, rgb(102, 247, 215), rgb(56, 158, 253));
+    /* background-image: url("https://img5.pic.in.th/file/secure-sv1/229541.jpeg");
+    background-size: cover; */
+    /* กำหนดให้รูปภาพขยายเต็มพื้นที่ */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    /* ใช้ Flexbox เพื่อจัดเนื้อหาภายใน */
+    justify-content: center;
+    /* จัดเนื้อหาในแนวนอนตรงกลาง */
+    align-items: center;
+    /* จัดเนื้อหาในแนวตั้งตรงกลาง */
+    box-shadow: 2px 2px 4px rgba(27, 27, 27, 1.3);
+    font-size: 5rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* เพิ่มเงาของข้อความ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2.5);
+    animation: bounce 1s infinite alternate;
+    cursor: pointer;
+    /* เปลี่ยนรูป cursor เป็น pointer เมื่อชี้ */
+    /* เพิ่มการเปลี่ยนแปลงเมื่อเม้าส์ชี้ไปที่วงกลม */
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.circle-btn:hover,
+.circle-btn:active {
+    /* หมุนวงกลม 1 รอบ */
+    background: linear-gradient(45deg, rgb(172, 247, 102), rgb(250, 139, 213));
+    transform: rotate(360deg) scale(1.2);
+    /* ขยายขนาดวงกลม */
+    width: 70px;
+    height: 70px;
+    color: red;
+    /* กำหนดสีข้อความเป็นสีแดง */
+    animation: changeColor 1s infinite;
+}
+
+@keyframes changeColor {
+    0% {
+        color: rgb(76, 241, 43);
+    }
+    50% {
+        color: rgb(37, 58, 252);
+    }
+    100% {
+        color: rgb(242, 109, 247);
+    }
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-15px);
+        /* เคลื่อนที่ขึ้น -10px */
+    }
+}
+
+
+/* defaults  modal */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* html {
+    font-size: 80.5%;
+} */
+
+.my-body-modal {
+    --light: hsl(220, 50%, 90%);
+    --primary: hsl(255, 30%, 55%);
+    --focus: hsl(210, 90%, 50%);
+    --border-color: hsla(0, 0%, 100%, .2);
+    --global-background: hsl(220, 25%, 10%);
+    --background: linear-gradient(to right, hsl(210, 68%, 41%), hsl(252, 31%, 45%));
+    --shadow-1: hsla(236, 50%, 50%, .3);
+    --shadow-2: hsla(236, 50%, 50%, .4);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+    color: var(--light);
+    background: var(--global-background);
+}
+
+a,
+a:link {
+    font-family: inherit;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+
+/* box-modal */
+
+.my-box-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 4rem 2rem;
+}
+
+.my-box-modal:not(:first-child) {
+    height: 45rem;
+}
+
+.box__title {
+    font-size: 10rem;
+    font-weight: normal;
+    letter-spacing: .8rem;
+    margin-bottom: 2.6rem;
+}
+
+.box__title::first-letter {
+    color: var(--primary);
+}
+
+.box__p,
+.box__info,
+.box__note {
+    font-size: 1.6rem;
+}
+
+.box__info {
+    margin-top: 6rem;
+}
+
+.box__note {
+    line-height: 2;
+}
+
+
+/* modal */
+
+.my-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* --m-background is set as inline style */
+    background: var(--m-background);
+}
+
+.my-modal-container img {
+    width: 400px;
+    /* กำหนดความกว้างของภาพ */
+    /* margin: auto; */
+    margin-left: auto;
+    /* ชิดขวา */
+    /* จัดให้ภาพอยู่ตรงกลาง */
+    position: relative;
+    /* กำหนดตำแหน่งให้กับภาพ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เป็นแถบชี้ */
+    transition: transform 0.3s ease;
+    /* เพิ่มการเปลี่ยนแปลงเมื่อ hover */
+    border-radius: 3rem;
+}
+
+.my-modal-container img:hover {
+    transform: scale(1.2);
+    /* ขยายขนาดภาพเมื่อ hover */
+}
+
+.modal-body img {
+    width: 400px;
+    /* กำหนดความกว้างของภาพ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เป็นแถบชี้ */
+    transition: transform 0.3s ease;
+    /* เพิ่มการเปลี่ยนแปลงเมื่อ hover */
+    border-radius: 3rem;
+}
+
+.modal-body img:hover {
+    transform: scale(1.2);
+    /* ขยายขนาดภาพเมื่อ hover */
+}
+
+#exampleModalToggle .modal-content {
+    background: linear-gradient(45deg, rgb(110, 66, 128), rgb(43, 151, 151));
+    /* สีพื้นหลังที่ต้องการ */
+    border-radius: 2.5rem;
+    /* align-items: center; */
+    /* ไม่มีมุมโค้งบนด้านล่าง */
+    color: rgb(255, 255, 255);
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+#staticBackdrop .modal-content {
+    background: linear-gradient(45deg, rgb(110, 66, 128), rgb(43, 86, 151));
+    /* สีพื้นหลังที่ต้องการ */
+    border-radius: 2.1rem;
+    justify-content: center;
+    align-items: center;
+    /* ไม่มีมุมโค้งบนด้านล่าง */
+    font-family: 'Noto Sans Thai', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+#staticBackdrop .modal-content .btn-close {
+    float: right;
+    /* จัดตำแหน่งปุ่มไปทางขวา */
+    /* margin-top: 0px; */
+    /* ย้ายปุ่มขึ้นเพื่อให้อยู่ใกล้กับช่องหัวของ modal */
+    margin-right: -200px;
+    /* ย้ายปุ่มไปทางขวาของช่องหัวของ modal */
+    background-color: transparent;
+    /* กำหนดพื้นหลังของปุ่มให้โปร่งใส */
+    border: none;
+    /* ไม่มีเส้นขอบ */
+    color: #fcfcfc;
+    /* สีข้อความในปุ่ม */
+    font-size: 1.5rem;
+    /* ขนาดตัวอักษร */
+    padding: 0;
+    /* ไม่มีการเพิ่มขอบรอบปุ่ม */
+    line-height: 1;
+    /* ไม่มีระยะห่างระหว่างบรรทัด */
+}
+
+
+/* using :target */
+
+.my-modal-container:target {
+    display: flex;
+}
+
+.modal-mo {
+    width: 50rem;
+    padding: 4rem 2rem;
+    border-radius: 3rem;
+    color: var(--light);
+    background: var(--background);
+    box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) var(--shadow-1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal__title {
+    font-size: 2.2rem;
+}
+
+.modal__text {
+    padding: 0 4rem;
+    margin-top: 4rem;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+.modal__btn {
+    margin-top: 4rem;
+    padding: 1rem 1.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 100rem;
+    background: #47bdf3;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: inherit;
+    letter-spacing: .2rem;
+    /* transition: .2s; */
+    cursor: pointer;
+}
+
+.modal__btn:nth-of-type(1) {
+    margin-right: 1rem;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+    background: var(--focus);
+    border-color: var(--focus);
+    transform: translateY(-.2rem);
+}
+
+
+/* link-... */
+
+.link-1 {
+    font-size: 1.8rem;
+    color: var(--light);
+    background: var(--background);
+    box-shadow: .4rem .4rem 2.4rem .2rem var(--shadow-1);
+    border-radius: 100rem;
+    padding: 1.4rem 3.2rem;
+    transition: .2s;
+}
+
+.link-1:hover,
+.link-1:focus {
+    transform: translateY(-.2rem);
+    box-shadow: 0 0 4.4rem .2rem var(--shadow-2);
+}
+
+.link-1:focus {
+    box-shadow: 0 0 4.4rem .2rem var(--shadow-2), 0 0 0 .4rem var(--global-background), 0 0 0 .5rem var(--focus);
+}
+
+.link-2 {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 100rem;
+    color: inherit;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.link-2::before {
+    content: '×';
+    transform: translateY(-.1rem);
+}
+
+.link-2:hover,
+.link-2:focus {
+    background: var(--focus);
+    border-color: var(--focus);
+    transform: translateY(-.2rem);
+}
+
+.abs-site-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: hsla(0, 0%, 1000%, .6);
+    font-size: 1.6rem;
+}
+
+
+/* end defaults  modal */
+
+
+/* Nav  */
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    background: linear-gradient(45deg, rgb(186, 240, 228), rgb(148, 200, 250));
+    display: flex;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+.my-navbar {
+    display: flex;
+    justify-content: space-between;
+    /* จัดเรียงข้อมูลให้อยู่สองด้านของ navbar */
+    align-items: center;
+    /* จัดเรียงข้อมูลให้อยู่กึ่งกลางตามแนวตั้ง */
+}
+
+.my-navbar-right {
+    display: flex;
+    /* แสดงข้อมูลชื่อผู้ใช้และไอคอนในแถบตาม */
+    align-items: center;
+    /* จัดเรียงข้อมูลให้อยู่กึ่งกลางตามแนวตั้ง */
+    font-size: 20px;
+    margin-right: 20px;
+    /* กำหนดขนาดของไอคอน user */
+}
+
+.my-navbar-right p {
+    margin-left: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    /* กำหนดขนาดของไอคอน user */
+    /* เพิ่มระยะห่างด้านซ้ายของชื่อผู้ใช้ */
+}
+
+@media screen and (max-width: 430px) {
+    .nav {
+        width: 100%;
+        /* ขยาย Nav bar เมื่อหน้าจอเล็กลงไปที่ 430px หรือน้อยกว่านั้น */
+    }
+    .nav__icon {
+        font-size: 40px;
+    }
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 30px;
+}
+
+.card {
+    width: 70vw;
+    /* กำหนดความกว้างของการ์ด */
+    margin: 0 auto;
+    /* จัดให้การ์ดอยู่กึ่งกลางของหน้าจอ */
+    text-align: center;
+    /* จัดให้เนื้อหาภายในการ์ดอยู่กึ่งกลาง */
+}
+
+
+/* -------------btn-------- */
+
+.c-button {
+    background: linear-gradient(140deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
+    border-radius: 45px;
+    font-size: 16px;
+    text-align: left;
+    padding: 11px 0px 11px 0px;
+    border: 4px solid rgb(37, 37, 37) !important;
+    border-style: outset;
+    box-shadow: -6px -5px 18px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border: none;
+}
+
+.c-button .c-main {
+    border-radius: 45px;
+    color: rgba(255, 255, 255, 1);
+    padding: 11px 25px 11px 2px;
+    box-shadow: inset 0px 0px 5px rgba(17, 17, 17, 0);
+    transition: all 0.5s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.c-ico .c-blur {
+    background: linear-gradient(318deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
+    border-radius: 100%;
+    margin-left: 0;
+    padding: 8px 23px;
+    filter: blur(1px);
+    text-align: center;
+}
+
+.c-ico {
+    position: relative;
+    margin-right: 20px;
+}
+
+.c-ico .ico-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Hovering */
+
+.c-button .c-main:hover {
+    box-shadow: inset 0px 0px 5px rgba(17, 17, 17, 0.6);
+    border: 1px solid rgba(26, 26, 26, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h4 {
+    margin: 2rem 0rem;
+}
+
+.panel {
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 0.2rem;
+}
+
+&.panel-big-height {
+    min-height: 150px;
+}
+
+.item {
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 0.2rem;
+}
+
+
+/* modal จอง ฟอร์ม */
+
+
+/* .box-modal {
+    width: 2%;
+    height: 2%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+} */
+
+
+/* .button-modal {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+} */
+
+
+/* .button-modal:hover {
+    background: #06D85F;
+} */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-modal {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup-modal h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup-modal .close-popup {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup-modal .close-popup:hover {
+    color: #06D85F;
+}
+
+.popup-modal .content {
+    max-height: 10%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .my-box-modal {
+        width: 100%;
+    }
+    .popup-modal {
+        width: 100%;
+    }
+}
+
+
+/* --------- */
+
+.btn-donate .btn {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.btn-donate .box:hover {
+    background-position: right top;
+}
+
+.btn-donate .btn:is(:focus,
+ :focus-visible,
+ :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-donate .btn {
+        transition: linear;
+    }
+}
