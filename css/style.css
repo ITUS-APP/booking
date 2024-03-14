@@ -45,7 +45,7 @@ body {
 
 .my-container {
     background-image: url("https://img2.pic.in.th/pic/BG076535ae9a31655b.jpeg");
-    background-size: cover;
+    /* background-size: cover; */
     /* ให้ภาพพื้นหลังขยายเต็มพื้นที่ของหน้าจอ */
     background-position: center;
     /* จัดวางภาพให้อยู่ตรงกลางของหน้าจอ */
@@ -81,7 +81,7 @@ body {
 .my-container .box-container .box {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     border-radius: 5px;
-    background: linear-gradient(45deg, rgb(250, 241, 253), rgb(210, 252, 243));
+    background: linear-gradient(45deg, rgb(23, 89, 177), rgb(23, 149, 187));
     /* background-image: url("https://img5.pic.in.th/file/secure-sv1/229541.jpeg"); */
     background-size: cover;
     text-align: center;
@@ -94,13 +94,13 @@ body {
 }
 
 .my-container .box-container .box h3 {
-    color: #444;
+    color: #f8f5f5;
     font-size: 22px;
     padding: 10px 0;
 }
 
 .my-container .box-container .box p {
-    color: #777;
+    color: #a1d2ee;
     font-size: 15px;
     line-height: 1.8;
 }
@@ -118,6 +118,11 @@ body {
 
 .my-container .box-container .box .btn:hover {
     letter-spacing: 1px;
+    /* เปลี่ยนสีพื้นหลังเมื่อนำเมาส์ไปวางทับ */
+    color: #ffffff;
+    /* เปลี่ยนสีของตัวอักษรเมื่อนำเมาส์ไปวางทับ */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    /* เปลี่ยนสีเส้นขอบเมื่อนำเมาส์ไปวางทับ */
 }
 
 .my-container .box-container .box .btn2 {
@@ -133,17 +138,26 @@ body {
 
 .my-container .box-container .box .btn2:hover {
     letter-spacing: 1px;
+    color: #ffffff;
+    /* เปลี่ยนสีของตัวอักษรเมื่อนำเมาส์ไปวางทับ */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    /* เปลี่ยนสีเส้นขอบเมื่อนำเมาส์ไปวางทับ */
 }
 
 .my-container .box-container .box:hover {
     box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 @media (max-width:768px) {
     .my-container {
         padding: 20px;
     }
+}
+
+.my-container .box-container .box {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* เพิ่มการเปลี่ยนแปลงให้มีเอฟเฟค */
 }
 
 .circle {
@@ -470,6 +484,10 @@ button::-moz-focus-inner {
     background: var(--focus);
     border-color: var(--focus);
     transform: translateY(-.2rem);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    background: #9747f3;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* เพิ่มการเปลี่ยนแปลงให้มีเอฟเฟค */
 }
 
 
